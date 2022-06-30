@@ -1,0 +1,7 @@
+Begin
+N la so nguyen to ngau nhien trong khoang 0-9
+nhap vao M
+If (N==M)
+display " dự đoán đúng"
+Else "dự đoán sai"
+end

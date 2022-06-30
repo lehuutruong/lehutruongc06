@@ -1,0 +1,11 @@
+Begin 
+input N(a1, a2, a3,... an)
+Max=a1
+i=2
+while (i<=n)
+Do  If (ai>Max) then
+           Max=ai
+    End if
+    i=i++
+End do
+ Output(Max)

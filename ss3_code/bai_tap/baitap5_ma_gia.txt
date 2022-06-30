@@ -1,0 +1,16 @@
+begin
+Input Diem
+If Diem>=75
+   display Loai A
+else 
+    if Diem>=60
+    display Loai B
+    else 
+        if Diem>=45
+        display Loai C
+        else
+          if Diem>=35
+          display Loai D
+          else Loai E
+
+    
