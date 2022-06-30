@@ -1,5 +1,0 @@
-begin
-input dola
-VND= dola/23000
-display VND
-End

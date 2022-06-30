@@ -1,5 +1,0 @@
-begin
-input math, physics, chemistry
-average = ( math+ physics+ chemistry )/3
-display average
-end
