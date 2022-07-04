@@ -1,0 +1,14 @@
+th{
+    background-color: orange;
+    border: 1px solid black;
+
+}
+table{
+    border-collapse: collapse;
+    padding: 10px;
+}
+td
+{ border: 1px solid black;
+    text-align: center;
+
+}

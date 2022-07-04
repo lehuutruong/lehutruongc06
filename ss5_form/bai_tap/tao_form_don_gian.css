@@ -1,0 +1,13 @@
+th{
+    background: orangered;
+    color: white;
+}
+table{
+    font-family: Arial;
+}
+.left{
+    text-align: right;color: blue;
+}
+.right{
+    color: orangered;
+}

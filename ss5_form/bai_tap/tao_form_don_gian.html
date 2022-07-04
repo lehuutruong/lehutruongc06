@@ -3,14 +3,58 @@
 <head>
     <meta charset="UTF-8">
     <title>Tạo form đơn giảm</title>
+    <link rel="stylesheet" href="tao_form_don_gian.css">
 </head>
 <body>
-<h1>
-    SỞ THÍCH CỦA BẠN
-</h1>
-<p>
-    Họ và tên
-</p>
-<input type="text">
+<form>
+    <table>
+        <tr>
+            <th colspan="4">SỞ THÍCH CỦA BẠN</th>
+        </tr>
+        <tr>
+            <td class="left">
+                Họ và tên
+            </td>
+            <td colspan="3">
+                <input type="text"  name="yourname">
+            </td>
+        </tr>
+        <tr>
+            <td class="left" >
+                Email
+            </td>
+            <td colspan="3">
+                <input type="text" name="mail" >
+            </td>
+        </tr>
+        <td class="left">
+            Sở thích
+        </td>
+        <td class="right" > <label><input type="checkbox" name="Thethao" value="Thể thao" > Thể thao</label></td>
+        <td class="right">  <label><input type="checkbox" name="amnhac" value="Âm nhạc" > Âm nhạc</label></td>
+        <td class="right">   <label><input type="checkbox" name="docsach" value="Đọc sách" > Đọc sách</label></td>
+        </tr>
+        <tr>
+            <td></td>
+                      <td class="right">  <label><input type="checkbox" name="luotweb" value="Lướt web" > Lướt web</label></td>
+            <td class="right"> <label><input type="checkbox" name="Choigame" value="Chơi game" > Chơi game</label></td>
+            <td class="right">  <label><input type="checkbox"name="dienanh" value="Điện ảnh" > Điện ảnh</label></td>
+
+        </tr>
+        <tr>
+            <td></td>
+            <td class="right">
+                <label><input type="checkbox" name="dulich" value="Du lịch" >Du lịch</label>
+            </td>
+        </tr>
+        <tr>
+            <td></td>
+            <td class="right" colspan="3">
+                <label><input type="submit" name="Gửi thông tin"value="Gửi thông tin" ></label>
+                <label><input type="submit"name="Nhập lại"value="Nhập lại" ></label>
+            </td>
+        </tr>
+    </table>
+</form>
 </body>
 </html>

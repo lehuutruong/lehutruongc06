@@ -1,0 +1,23 @@
+.h2{
+   color: blue;
+}
+.h3{
+    color: blueviolet;
+}
+.h4{
+    border: 1px solid black;
+    border-collapse: collapse;
+}
+table{
+    border-collapse: collapse;
+}
+.h5{
+    border: 1px solid black;
+    border-collapse: collapse;
+    background-color: orange;
+}
+.h6{
+    border: 1px solid black;
+    border-collapse: collapse;
+    background-color: orangered;
+}

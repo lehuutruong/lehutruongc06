@@ -1,0 +1,23 @@
+.m1{
+    background-color: black;
+    height:50px;
+    width: 50px;
+}
+.m2{
+    background-color: white;
+    height:50px;
+    width: 50px;
+}
+.m3{
+    background-color: orangered;
+    height:50px;
+    width: 50px;
+}
+table{
+    background-color: orangered;
+    border-collapse: collapse;
+}
+th,td{
+    height:50px;
+    width: 50px;
+}

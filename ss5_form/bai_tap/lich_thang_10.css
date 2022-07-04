@@ -1,0 +1,45 @@
+.n1{
+    color: blueviolet;
+
+}
+.n2{
+    color: red;
+}
+td,th{
+  padding: 10px;
+    border-collapse: collapse;
+    text-align: center;
+
+}
+.k{
+    border: 1px solid black;
+}
+.i{
+    color: blueviolet;
+    border: 1px solid black;
+}
+.l{
+    color: red;
+    border: 1px solid black;
+}
+table{
+    border-collapse: collapse;
+}
+.o{
+    background-color: red;
+    border: 1px solid white;
+    color: white;
+}
+.p{
+    background-color: orange;
+    border: 1px solid white;
+    color: white;
+}
+.t{
+    background-color: blue;
+    border: 1px solid white;
+    color: white;
+}
+.q{
+    color: black;
+}
