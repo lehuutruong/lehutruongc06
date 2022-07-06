@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>chuyen_doi_tien</title>
+
+</head>
+<body>
+<table>
+    <tr>
+        <th> Amount</th>
+        <th> From Currency</th>
+        <th> To Currency</th>
+    </tr>
+    <tr>
+        <td>
+            <label><input type="text" id="amount"></label>
+        </td>
+        <td>
+            <select id="from">
+                <option value="VietNam">
+                    VietNam
+                </option>
+                <option value="Usd">Usd</option>
+            </select>
+        </td>
+        <td>
+            <select id="to">
+                <option value="VietNam">
+                    VietNam
+                </option>
+                <option value="Usd">Usd</option>
+            </select>
+        </td>
+        <td>
+            <button type="button" onclick="chuyenDoiTien()"> Convert</button>
+        </td>
+    </tr>
+    <tr>
+        <td><p id="ketqua">Result
+        </p></td>
+    </tr>
+
+</table>
+</body>
+<script>
+    function chuyenDoiTien() {
+        let amount = document.getElementById('amount').value;
+        let from = document.getElementById('from').value;
+        let to = document.getElementById('to').value;
+        let ketQua;
+        if (from === 'VietNam' && to === 'Usd') {
+            ketQua = "ketqua" + (amount / 23000) + 'Usd'
+        } else if (from === "Usd" && to === "VietNam") {
+            ketQua = 'ketqua' + (amount * 23000) + 'vnd'
+        } else if (from === 'VietNam') {
+            ketQua = 'ketqua = ' + amount + 'Vnd'
+        } else {
+            ketQua = 'ketqua =' + amount + 'Usd'
+        }
+        document.getElementById('ketqua').innerText = ketQua
+    }
+</script>
+
+</html>

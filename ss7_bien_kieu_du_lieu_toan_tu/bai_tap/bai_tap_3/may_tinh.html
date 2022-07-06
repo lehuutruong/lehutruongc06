@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+</head>
+<body>
+<table>
+    <tr>
+        <td>Caculator</td>
+    </tr>
+    <tr>
+        <td colspan="2"><label><input type="text" id="soDauTien"></label></td>
+        <td colspan="2"><label><input type="text" id="soThuHai"></label></td>
+    </tr>
+    <tr>
+        <td>
+            <button type="button" onclick="cong()">cộng</button>
+
+        <td>
+            <button type="button" onclick="tru()">trừ</button>
+        </td>
+        <td>
+            <button type="button" onclick="nhan()">nhân</button>
+        </td>
+        <td>
+            <button type="button" onclick="chia()">chia</button>
+        </td>
+    </tr>
+    <tr>
+        <td><p id="ketQua">
+            KETQUA
+        </p></td>
+    </tr>
+</table>
+</body>
+<script >
+    function cong() {
+        let a = parseFloat(document.getElementById('soDauTien').value)
+        let b = parseFloat(document.getElementById('soThuHai').value)
+        // c=parseFloat(a)
+        // d=parseFloat(b)
+        let ketQua
+        ketQua = (a + b)
+        document.getElementById('ketQua').innerText = ketQua
+    }
+
+    function tru() {
+        let a = parseFloat(document.getElementById('soDauTien').value)
+        let b = parseFloat(document.getElementById('soThuHai').value)
+        // c=parseFloat(a)
+        // d=parseFloat(b)
+        let ketQua
+        ketQua = (a - b)
+        document.getElementById('ketQua').innerText = ketQua
+    }
+
+    function nhan() {
+        let a = parseFloat(document.getElementById('soDauTien').value)
+        let b = parseFloat(document.getElementById('soThuHai').value)
+        // c=parseFloat(a)
+        // d=parseFloat(b)
+        let ketQua
+        ketQua = (a * b)
+        document.getElementById('ketQua').innerText = ketQua
+    }
+
+    function chia() {
+        let a = parseFloat(document.getElementById('soDauTien').value)
+        let b = parseFloat(document.getElementById('soThuHai').value)
+        // c=parseFloat(a)
+        // d=parseFloat(b)
+        let ketQua
+        ketQua = (a / b)
+        document.getElementById('ketQua').innerText = ketQua
+    }
+</script>
+</html>
