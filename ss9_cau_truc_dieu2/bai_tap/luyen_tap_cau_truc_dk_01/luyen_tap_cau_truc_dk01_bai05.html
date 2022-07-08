@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+<script>
+    let baiKiemTra = +prompt('mời bạn nhập điểm bài kiểm tra');
+    let baiGiuaKi = +prompt('mời bạn nhập điểm bài giữa kì');
+    let baiCuoiKi = +prompt('mời bạn nhập điểm bài cuối kì');
+    let diemTrungBinh = (baiKiemTra + baiGiuaKi + baiCuoiKi) / 3;
+    (diemTrungBinh >= 9) ? alert("hạng điểm của bạn là :loại giỏi") : (diemTrungBinh < 9 && diemTrungBinh >= 6.5) ? alert('hạng điểm của bạn là loại khá') : alert("hạng điểm của bạn là loại trung bình");
+</script>
+</html>

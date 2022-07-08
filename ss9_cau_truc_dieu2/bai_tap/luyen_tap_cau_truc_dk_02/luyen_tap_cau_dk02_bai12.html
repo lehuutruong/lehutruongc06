@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>title</title>
+</head>
+<body>
+<table>
+    <tr>
+        <th>Tiền gửi</th>
+        <th>Số năm gửi</th>
+        <th>Lãi suất</th>
+        <th>Tiền lãi sau <span></span> năm</th>
+
+    </tr>
+    <tr>
+        <td><input id="tienGui" type="text"></td>
+        <td><input id="namGui" type="text"></td>
+        <td><input id="laiSuat" type="text"></td>
+        <td><input id="tienLai" type="text"></td>
+    </tr>
+
+    <tr>
+        <td>
+            <BUTTON onclick="xuatKetQua()">Xuất kết quả</BUTTON>
+        </td>
+
+    </tr>
+
+
+</table>
+</body>
+<script>
+    function xuatKetQua(){
+    let tienGoc = +document.getElementById("tienGui").value;
+    let soNamGui = +document.getElementById("namGui").value;
+    let laiSuat = +document.getElementById("laiSuat").value;
+    for (let i = 0; i < soNamGui; i++) {
+        tienGoc += tienGoc * laiSuat
+    }
+    document.getElementById("tienLai").value=tienGoc;
+    }
+</script>
+</html>

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+<script>
+    let doanhSoBanHang = +prompt("mời bạn nhập vào doanh số bán hàng");
+    let hoaHong;
+    if (doanhSoBanHang >= 100) {
+        hoaHong = doanhSoBanHang * 0.03
+        alert("hoa hồng của bạn là : " + hoaHong);
+    } else if (doanhSoBanHang >= 30) {
+        hoaHong = doanhSoBanHang * 0.02
+        alert("hoa hồng của bạn là : " + hoaHong);
+    } else {
+        hoaHong = doanhSoBanHang * 0.01
+        alert('hoa hồng của bạn là : ' + hoaHong);
+    }
+</script>
+</html>

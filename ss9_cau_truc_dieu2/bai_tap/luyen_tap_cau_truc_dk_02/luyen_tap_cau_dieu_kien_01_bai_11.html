@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<p>Tổng thu nhập</p>
+<input type="text" id="tienLuong">
+<button type="button" onclick="thueSuat()">Thuế Suất</button>
+<input type="text" id="ketQua">
+<!--<p id="ketQua"> Tiền điện tháng này là :</p>-->
+</body>
+<script>
+    function thueSuat() {
+        let thueTheoLuong = +document.getElementById('tienLuong').value;
+        let thucNhan;
+        let thue;
+        thucNhan = (thueTheoLuong - 11000000);
+        if ((thucNhan > 0) && (thucNhan <= 5000000)) {
+            thue = (thucNhan * 0.05);
+        } else if ((thucNhan > 5000000) && (thucNhan <= 10000000)) {
+            thue = (250000 + (thucNhan - 5000000) * 0.1);
+        } else if ((thucNhan > 10000000) && (thucNhan <= 18000000)) {
+            thue = (250000 + 500000 + (thucNhan - 10000000) * 0.15);
+        } else if ((thucNhan > 18000000) && (thucNhan <= 32000000)) {
+            thue = (250000 + 500000 + 1200000 + (thucNhan - 18000000) * 0.2);
+        } else if ((thucNhan > 32000000) && (thucNhan <= 52000000)) {
+            thue = (250000 + 500000 + 1200000 + 2800000 + ((thucNhan - 32000000) * 0.25));
+        } else if ((thucNhan > 52000000) && (thucNhan <= 80000000)) {
+            thue = (250000 + 500000 + 1200000 + 2800000 + 5000000 + (thucNhan - 52000000) * 0.3);
+        } else {
+            thue = (250000 + 500000 + 1200000 + 2800000 + 5000000 + 8400000 + (thucNhan - 80000000) * 0.35);
+        }
+        document.getElementById("ketQua").value = thue;
+    }
+</script>
+</html>

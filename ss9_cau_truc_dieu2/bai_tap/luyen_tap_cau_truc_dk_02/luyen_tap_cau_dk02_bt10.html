@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<input type="text" id="tienDien">
+<button type="button" onclick="tienDienNam()">Tiền điên</button>
+<input type="text" id="ketQua">
+<!--<p id="ketQua"> Tiền điện tháng này là :</p>-->
+</body>
+<script>
+    function tienDienNam() {
+        let tienTheoThang = +document.getElementById('tienDien').value
+        let giaDien;
+        if (tienTheoThang > 400) {
+            giaDien = (tienTheoThang * 1678);
+        } else if ((tienTheoThang <= 400) && (tienTheoThang > 300)) {
+            giaDien = (tienTheoThang * 2834);
+        } else if ((tienTheoThang <= 300) && (tienTheoThang > 200)) {
+            giaDien = (tienTheoThang * 2536);
+        } else if ((tienTheoThang <= 200) && (tienTheoThang > 100)) {
+            giaDien = (tienTheoThang * 2014);
+        } else if ((tienTheoThang <= 100) && (tienTheoThang > 50)) {
+            giaDien = (tienTheoThang * 1734);
+        } else if ((tienTheoThang <= 50) && (tienTheoThang > 0)) {
+            giaDien = (tienTheoThang * 1678);
+        }
+        document.getElementById("ketQua").value = +giaDien;
+    }
+</script>
+</html>

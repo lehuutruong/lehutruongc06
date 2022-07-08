@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>kiemTraNamNhuan</title>
+</head>
+<body>
+<label>
+    <input type="text" id="namHienTai">
+</label>
+<p id="ketQua"></p>
+<button type="button" onclick="kiemTraNamNhuan()"> Kêt Quả</button>
+</body>
+<script>
+    function kiemTraNamNhuan() {
+        let nam = document.getElementById('namHienTai').value;
+        let laNamNhuan = "laNamNhuan";
+        let khongLaNamNhuan = "laNamKhongNhuan";
+        if (nam % 4 === 0 && nam % 100 !== 0 || nam % 400 === 0) {
+            document.getElementById('ketQua').innerText = laNamNhuan
+        } else {
+            document.getElementById('ketQua').innerText = khongLaNamNhuan
+        }
+    }
+</script>
+</html>
