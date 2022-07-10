@@ -9,6 +9,12 @@
 </body>
 <script>
     let tuoiMotNguoi = +prompt("nhập vào tuổi một người");
-    (tuoiMotNguoi > 0 && tuoiMotNguoi < 120) ? alert("đó là tuổi của một người: " + tuoiMotNguoi) : alert("đó không phải là tuổi của một người");
+    if(tuoiMotNguoi> 0 && tuoiMotNguoi < 120){
+        alert('Đó là tuổi của một người: '+tuoiMotNguoi);
+    }
+    else {
+        alert('Đó không phải là tuổi của một người');
+    }
+    // (tuoiMotNguoi > 0 && tuoiMotNguoi < 120) ? alert("đó là tuổi của một người: " + tuoiMotNguoi) : alert("đó không phải là tuổi của một người");
 </script>
 </html>

@@ -35,7 +35,7 @@
         <td><input type="button" value="*" onclick="nhap(this.value)"></td>
     </tr>
     <tr>
-        <td><input type="button" value="AC" onclick="ac()"></td>
+        <td><input type="button" value="AC" onclick="xoaDuLieu()"></td>
         <td><input type="button" value="0" onclick="nhap(this.value)"></td>
         <td><input type="button" value="=" onclick="xuatKetQua()"></td>
         <td><input type="button" value="/" onclick="nhap(this.value)"></td>
@@ -56,7 +56,7 @@
         document.getElementById(`hienthi`).value = ketQua;
     }
 
-    function ac() {
+    function xoaDuLieu() {
         document.getElementById(`hienthi`).value = ``;
 
     }

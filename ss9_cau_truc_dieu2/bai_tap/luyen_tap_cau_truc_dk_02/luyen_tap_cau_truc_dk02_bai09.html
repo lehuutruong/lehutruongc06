@@ -11,13 +11,20 @@
     let giaTriCanhA = +prompt("nhập vào giá trị cạnh a");
     let giaTriCanhB = +prompt("nhập vào giá trị cạnh b");
     let giaTriCanhC = +prompt("nhập vào giá trị cạnh c");
-    (((giaTriCanhA > 0) && (giaTriCanhB > 0) && (giaTriCanhC > 0)) && ((giaTriCanhA + giaTriCanhB) > giaTriCanhC) &&
-        ((giaTriCanhB + giaTriCanhC) > giaTriCanhA)
-        &&
-        ((giaTriCanhC + giaTriCanhA) > giaTriCanhB))
-
-        ? alert('số thực a b c là cạnh của một tam giác')
-        :
-        alert("số thực a b c không phải là cạnh của một tam giác");
+    if(giaTriCanhA>0 && giaTriCanhB> 0 && giaTriCanhC >0 && ((giaTriCanhA + giaTriCanhB) > giaTriCanhC)&&((giaTriCanhB + giaTriCanhC) > giaTriCanhA)&&((giaTriCanhC + giaTriCanhA) > giaTriCanhB))
+    {
+      alert("đó là ba cạnh của một tam giác")  ;
+    }
+    else {
+        alert('đó không phải là ba cạnh của một tam giác');
+    }
+        // (((giaTriCanhA > 0) && (giaTriCanhB > 0) && (giaTriCanhC > 0)) && ((giaTriCanhA + giaTriCanhB) > giaTriCanhC) &&
+    //     ((giaTriCanhB + giaTriCanhC) > giaTriCanhA)
+    //     &&
+    //     ((giaTriCanhC + giaTriCanhA) > giaTriCanhB))
+    //
+    //     ? alert('số thực a b c là cạnh của một tam giác')
+    //     :
+    //     alert("số thực a b c không phải là cạnh của một tam giác");
 </script>
 </html>

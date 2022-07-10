@@ -12,6 +12,15 @@
     let baiGiuaKi = +prompt('mời bạn nhập điểm bài giữa kì');
     let baiCuoiKi = +prompt('mời bạn nhập điểm bài cuối kì');
     let diemTrungBinh = (baiKiemTra + baiGiuaKi + baiCuoiKi) / 3;
-    (diemTrungBinh >= 9) ? alert("hạng điểm của bạn là :loại giỏi") : (diemTrungBinh < 9 && diemTrungBinh >= 6.5) ? alert('hạng điểm của bạn là loại khá') : alert("hạng điểm của bạn là loại trung bình");
+    if(diemTrungBinh >= 9) {
+        alert("hạng điểm của bạn là lại giỏi");
+    }
+    else if( diemTrungBinh <9 && diemTrungBinh >= 6.5){
+        alert("điểm trung bình của bạn là loại khá");
+    }
+    else if( diemTrungBinh <6.5){
+        alert('điểm trung bình của bạn là lại trung bình');
+    }
+    // (diemTrungBinh >= 9) ? alert("hạng điểm của bạn là :loại giỏi") : (diemTrungBinh < 9 && diemTrungBinh >= 6.5) ? alert('hạng điểm của bạn là loại khá') : alert("hạng điểm của bạn là loại trung bình");
 </script>
 </html>
