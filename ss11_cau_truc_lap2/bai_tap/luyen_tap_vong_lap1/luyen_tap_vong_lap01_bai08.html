@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+<button onclick="doanSoNguyen()">Bắt đầu</button>
+<script>
+    function doanSoNguyen() {
+        debugger;
+        let number = +prompt("Số bạn muốn đoán trong khoảng lớn nhất là bao nhiêu?")
+        let numberRanDom = Math.floor(Math.random() * number);
+        console.log(numberRanDom);
+        let numberXemXet = +prompt("Nhập số bạn đoán");
+        let count = 0;
+        while (numberXemXet !== numberRanDom) {
+            count++;
+            if (count === 4) {
+                alert("Bạn hết số lần đoán")
+                break;
+            } else if (numberXemXet < numberRanDom) {
+                alert("Số bạn đoán bé hơn");
+            } else {
+                alert("Số bạn đoán lớn hơn")
+            }
+            numberXemXet = prompt("Nhập số bạn đoán");
+        }
+        if (count === 4) {
+            document.write("Bạn hết số lần đoán")
+        } else {
+            document.write("Bạn đã đoán đúng số. Chúc mừng bạn!")
+        }
+    }
+</script>
+</body>
+</html>
