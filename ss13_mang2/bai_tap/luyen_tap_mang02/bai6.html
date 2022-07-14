@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+<script>
+    let dem = 0;
+    let chuoiOne = [];
+    let viTri;
+    do {
+        let chuoiNumbeOne = prompt('mời bạn nhập vào chuỗi');
+        chuoiOne.push(chuoiNumbeOne);
+        dem++;
+    }
+    while (dem < 3)
+    console.log(chuoiOne);
+    for (let i = 0; i < chuoiOne.length; i++) {
+        if (chuoiOne[i] === "-") {
+            viTri = chuoiOne.indexOf(chuoiOne[i]);
+            console.log(viTri)
+            chuoiOne.splice(viTri, 1, "_");
+        }
+    }
+    document.write(chuoiOne);
+</script>
+</html>

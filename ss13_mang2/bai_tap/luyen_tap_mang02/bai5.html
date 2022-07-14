@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+<script>
+    let chuoiNumbeOne = +prompt('mời bạn nhập vào chuỗi');
+    let chuoiNumbeTwo = +prompt('mời bạn nhập vào chuỗi');
+    let chuoiOne = [];
+    let chuoiTwo = [];
+    chuoiOne.push(chuoiNumbeOne);
+    chuoiTwo.push(chuoiNumbeTwo);
+    if (chuoiOne.length === chuoiTwo.length) {
+        for (let i = 0; i < chuoiOne.length; i++) {
+            if (chuoiOne[i] === chuoiTwo[i]) {
+                document.write("hai chuỗi giống nhau");
+            } else {
+                document.write('hai chuỗi không giống nhau');
+            }
+        }
+    }
+</script>
+</html>

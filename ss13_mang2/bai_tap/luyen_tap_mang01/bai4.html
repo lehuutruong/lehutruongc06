@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+<script>
+    let giaTri = [1, 2, 3, 4, 5, 6];
+    let first = 0;
+    let last = giaTri.length - 1;
+    while (first < last) {
+        let b = giaTri[first];
+        giaTri[first] = giaTri[last];
+        giaTri[last] = b;
+        first++;
+        last--;
+    }
+    document.write(giaTri);
+</script>
+</html>

@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+<script>
+    let number = [1, 2, 5, 6, 'h', 'y', 'u'];
+    let dem = 0;
+    for (let i = 0; i < number.length; i++) {
+        if (isNaN(number[i])) {
+            dem++;
+        }
+    }
+    document.write("kích thước của mảng là " + number.length + '<br>');
+    document.write(' số từ  trong mảng là ' + dem);
+</script>
+</html>

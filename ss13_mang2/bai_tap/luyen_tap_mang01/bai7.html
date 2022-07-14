@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+<script>
+    let arrayTiengViet = ['heart', 'quả chuối', 'quả táo', 'quả đào'];
+    let arrayTiengAnh = ['heart'];
+    for (let i = 0; i < arrayTiengViet.length; i++) {
+        if (arrayTiengAnh[0] === arrayTiengViet[i]) {
+            let viTri = arrayTiengViet.indexOf(arrayTiengViet[i]);
+            arrayTiengViet.splice(viTri, 1);
+        }
+    }
+    alert(arrayTiengViet);
+</script>
+</html>

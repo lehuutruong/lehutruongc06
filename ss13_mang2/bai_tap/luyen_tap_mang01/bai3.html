@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+<script>
+    let arraySoNguyen = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+    let max = arraySoNguyen[0];
+    let viTri;
+    let tong = 0;
+    let trungBinh;
+    for (let i = 0; i < arraySoNguyen.length; i++) {
+        if (max < arraySoNguyen[i]) {
+            max = arraySoNguyen[i];
+        }
+        tong = tong + arraySoNguyen[i];
+    }
+    trungBinh = tong / arraySoNguyen.length;
+
+    document.write('giá trị lơn nhất của mảng số nguyên là ' + max + '<br>');
+
+    document.write('giá trị trung bình của mảng là ' + trungBinh);
+
+</script>
+</html>

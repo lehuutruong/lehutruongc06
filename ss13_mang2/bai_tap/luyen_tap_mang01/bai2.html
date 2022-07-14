@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+<script>
+    let arraySoNguyen = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+    let max = arraySoNguyen[0];
+    let viTri;
+    for (let i = 0; i < arraySoNguyen.length; i++) {
+        if (max < arraySoNguyen[i]) {
+            max = arraySoNguyen[i];
+        }
+    }
+    document.write('giá trị lơn nhất của mảng số nguyên là ' + max + '<br>');
+    viTri = arraySoNguyen.indexOf(max);
+    document.write('vị trí của giá trị lơn nhất trong mảng là ' + viTri);
+</script>
+</html>

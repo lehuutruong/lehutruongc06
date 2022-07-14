@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<form>
+    <p>Dịch thuật các loại quả</p>
+    <input type="text" id="nhapVao">
+    <input type="text" id="xuatRa">
+    <input type="button" onclick="nhap()" id="click" value="NhapNhap">
+</form>
+</body>
+<script>
+    function nhap() {
+        let arrayTiengViet = ['quả táo', 'quả chuối', 'quả tim'];
+        let arrayTiengAnh = ['apple', 'banana', 'heart'];
+        let giaTri = document.getElementById('nhapVao').value;
+        let viTri = arrayTiengViet.indexOf(giaTri);
+        document.getElementById("xuatRa").value = arrayTiengAnh[viTri];
+    }
+</script>
+</html>
