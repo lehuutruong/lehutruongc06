@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<p> FEET</p>
+<input type="text" id="feet" oninput="chuyenDoiSo(this.value)">
+<p> METERS</p>
+<input type="text" id="meters" oninput="chuyenDoi(this.value)">
+
+</body>
+<SCRIPT>
+    function chuyenDoi(nhapVao) {
+        feet = 3.279 * nhapVao;
+        document.getElementById("feet").value = feet ;
+    }
+
+    function chuyenDoiSo(nhapNhap) {
+        meters = 3.279 * nhapNhap;
+        document.getElementById("meters").value = meters;
+    }
+
+</SCRIPT>
+</html>

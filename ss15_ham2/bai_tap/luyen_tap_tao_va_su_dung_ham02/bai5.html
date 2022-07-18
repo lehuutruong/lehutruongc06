@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+<script>
+    let inputOne = +prompt("nhập giá trị đầu tiên");
+    let inputTwo = +prompt("nhập giá trị thứ hai");
+    let inputThree = +prompt("nhập giá trị thứ ba");
+
+    function giaTriMin(giaTriOne, giaTriTwo, giaTriThree) {
+        if (giaTriOne < giaTriTwo && giaTriOne < giaTriThree) {
+            alert("giá trị đầu tiên là giá trị bé nhất");
+        } else if (giaTriTwo < giaTriThree && giaTriTwo < giaTriOne) {
+            alert("giá trị thứ hai là giá trị bé nhất");
+        } else {
+            alert("giá trị thứ ba là giá trị bé nhất");
+        }
+    }
+
+    giaTriMin(inputOne, inputTwo, inputThree);
+</script>
+</html>

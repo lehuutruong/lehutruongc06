@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<p>CHUYỂN ĐỔI NHIỆT ĐỘ</p>
+<input type="number" id="nhietDoF">
+<input type="button"  onclick="chuyenDoiNhietDo(document.getElementById('nhietDoF').value )" value="nhấp nhấp">
+<p id="nhietDoC"> KẾT QUẢ</p>
+</body>
+<script>
+    function chuyenDoiNhietDo(duLieu) {
+        duLieu= parseFloat(duLieu);
+        document.getElementById('nhietDoC').innerText=(duLieu-32)/1.8;
+         }
+</script>
+</html>

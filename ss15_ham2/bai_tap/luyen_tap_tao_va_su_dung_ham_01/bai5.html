@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+<script>
+    let input = prompt("nhập vào ngôi sao bạn muốn");
+    let arrayOne = ["Polaris", "Aldebaran", "Deneb", "Vega", "Altair", "Dubhe", "Regulus"];
+    let arrayTwo = ["Ursa Minor", "Tarurus", "Cygnus", "Lyra", "Aquila", "Ursa Major", "leo"];
+
+    function star(giaTriOne, giaTriTwo, giaTriThree) {
+        for (let i = 0; i < giaTriOne.length; i++) {
+                if (giaTriThree === giaTriOne[i]) {
+                    alert(giaTriTwo[i]);
+                    break;
+                }
+            while (!arrayOne.includes(giaTriThree)) {
+                alert('nhập lại đi');
+                giaTriThree = prompt("nhập vào ngôi sao bạn muốn");
+            }
+        }
+    }
+    star(arrayOne, arrayTwo, input);
+</script>
+</html>

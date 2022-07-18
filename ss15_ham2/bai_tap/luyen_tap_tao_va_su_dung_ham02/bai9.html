@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+<script>
+    let dem = 0;
+    let array = [2, 2, 2, 5, 6, 56, 5, 65, 6, 5];
+    function kiemTra(giaTri) {
+        for (let i = 0; i < giaTri.length; i++) {
+            if (!giaTri.includes(2)) {
+                alert("-1");
+                break;
+            }
+            if (giaTri[i] === 2) {
+                dem++;
+            }
+        }
+        alert("số giá trị 2 xuất hiện là: " + dem);
+    }
+    kiemTra(array);
+</script>
+</html>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+<script>
+    let arrayOne = [3, 5, 1, 8, -3, 7, 8];
+
+    function giaTriNhoNhat(ketQua) {
+        let min = ketQua[0];
+        for (let i = 0; i < ketQua.length; i++) {
+            if (ketQua[i] < min) {
+                min = ketQua[i];
+            }
+        }
+        return min;
+    }
+
+    giaTriNhoNhat(arrayOne);
+    document.write("giá trị nhỏ nhất của mảng là " + giaTriNhoNhat(arrayOne))
+</script>
+</html>

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<input type="text" id="nhapNhap">
+<input type="button" onclick="check(document.getElementById( `nhapNhap`).value)" value="nhấp nhấp">
+<p id="ketQua">kết quả</p>
+</body>
+<script>
+    function check(nhapVao) {
+        if (nhapVao < 0 || nhapVao > 1000) {
+            alert("mời bạn nhập lại số đúng quy đinh");
+            return;
+        }
+        else if(nhapVao==0 || nhapVao ==1){
+            document.getElementById('ketQua').innerText=nhapVao+ " " + "không phải là số nguyên tố";
+            return;
+        }
+        for (let j = 2; j < nhapVao; j++) {
+            if ((nhapVao % j) === 0) {
+                document.getElementById("ketQua").innerText = nhapVao + " " + "không phải là số nguyên tố";
+                // alert("không là số nguyên tố");
+                return;
+            }
+        }
+        document.getElementById('ketQua').innerText = nhapVao + " " + 'là số nguyên tố';
+        // alert('là số nguyên tố');
+    }
+
+</script>
+</html>

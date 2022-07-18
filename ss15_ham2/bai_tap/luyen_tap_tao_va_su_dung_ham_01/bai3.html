@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+<script>
+    let inputOne = +prompt("nhập vào số thứ nhất");
+    let inputTwo = +prompt("nhập vào số thứ hai");
+
+    function giaTri(giaTriOne, giaTriTwo, tongHaiThs) {
+        if (giaTriOne > giaTriTwo) {
+            alert("giá trị một lớn hơn giá trị hai");
+        } else {
+            tongHaiThs = giaTriTwo + giaTriOne;
+            alert("tông hai tham số là : " + tongHaiThs);
+        }
+    }
+
+    giaTri(inputOne, inputTwo);
+
+</script>
+</html>

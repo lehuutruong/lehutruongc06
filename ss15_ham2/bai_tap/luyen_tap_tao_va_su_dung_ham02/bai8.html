@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+<script>
+    let array = [];
+    let mangNew = [];
+    let number;
+    let dem = 1;
+    while (dem < 10) {
+        number = +prompt("nhập vào giá trị");
+        array.push(number);
+        dem++;
+    }
+
+    function daoSo(giatri) {
+        for (let i = 1; i <= giatri.length; i++) {
+            mangNew.push(giatri[giatri.length - i]);
+        }
+        alert("số đảo ngược là : "+mangNew);
+    }
+    daoSo(array);
+</script>
+</html>
