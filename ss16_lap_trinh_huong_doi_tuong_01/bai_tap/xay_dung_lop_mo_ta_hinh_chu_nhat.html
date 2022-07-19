@@ -8,23 +8,26 @@
 
 </body>
 <script>
-    class HinhChuNhat{
-        constructor(dai,rong) {
-            this.dai=dai;
-            this.rong=rong;
+    class HinhChuNhat {
+        constructor(dai, rong) {
+            this.dai = dai;
+            this.rong = rong;
         }
-        getDienTich(){
-            let dienTich=this.dai *this.rong;
+
+        getDienTich() {
+            let dienTich = this.dai * this.rong;
             return dienTich;
         }
-       getChuVi(){
-            let chuVi=2*(this.dai+this.rong);
+
+        getChuVi() {
+            let chuVi = 2 * (this.dai + this.rong);
             return chuVi;
-       }
+        }
 
     }
-    let ketQua=new HinhChuNhat(+prompt('nhập vào chiều dài'),+prompt('nhập vào chiều rông'))
-    document.write(ketQua.getDienTich()) ;
-    document.write(ketQua.getChuVi()) ;
-    </script>
+
+    let ketQua = new HinhChuNhat(+prompt('nhập vào chiều dài'), +prompt('nhập vào chiều rông'));
+    document.write(ketQua.getDienTich());
+    document.write(ketQua.getChuVi());
+</script>
 </html>
