@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+<script>
+    let arrayOne = [7, 2, 5, 3, 5, 3];
+    let arrayTwo = [7, 2, 5, 4, 6, 3, 5, 3];
+    let missingValue = [];
+    for (let i = 0; i < arrayOne.length; i++) {
+        for (let j = 0; j < arrayTwo.length; j++) {
+            if (arrayTwo[j] === arrayOne[i]) {
+                arrayTwo.splice(j, 1);
+            }
+        }
+    }
+    missingValue= arrayTwo;
+    alert("phần tử xuất hiện trong mảng B nhưng không lại xuất hiện trong A: " +missingValue);
+</script>
+</html>

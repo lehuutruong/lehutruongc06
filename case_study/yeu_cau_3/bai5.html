@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h3>MENU</h3>
+<p id="bangKetQua"></p>
+<p id="tongTienPhaiTra">Tổng tiền phải trả</p>
+<input type="button" id="btn-thanhtien" value="nhấp nhấp" onclick="pay()">
+<!--<table>-->
+<!--    <tr>-->
+<!--        <td>Thứ tự</td>-->
+<!--        <td>Danh sách đồ uống</td>-->
+<!--        <td>Số lượng</td>-->
+<!--        <td>Đơn giá</td>-->
+<!--        <td>Tổng tiền</td>-->
+<!--    </tr>-->
+<!--    <tr>-->
+<!--        <td>Thứ tự</td>-->
+<!--        <td>Danh sách đồ uống</td>-->
+<!--        <td>Số lượng</td>-->
+<!--        <td>Đơn giá</td>-->
+<!--        <td>Tổng tiền</td>-->
+<!--    </tr>-->
+<!--    </table>-->
+</body>
+<script>
+    let menuList = ["nước cam", "nước bò húc", "nước miếng", "nước bọt"];
+    let donGia = [10, 12, 15, 16];
+    let newDonGia = ['', '', '', ''];
+    let soLuongNuoc = ['', '', '', ''];
+    let thanhTien = [0, 0, 0, 0];
+    showMenuList(menuList);
+
+    function showMenuList(list) {
+        let conten = '<table border="1">\n' +
+            '    <tr>\n' +
+            '        <td>Thứ tự</td>\n' +
+            '        <td>Danh sách đồ uống</td>\n' +
+            '        <td>Số lượng</td>\n' +
+            '        <td>Đơn giá</td>\n' +
+            '        <td>Thành tiền</td>\n' +
+            '    </tr>'
+        for (let i = 0; i < list.length; i++) {
+            conten += ' <tr>\n' +
+                '        <td>' + (i + 1) + '</td>\n' +
+                '        <td><input type="button" onclick="danhSach(' + i + ')" value=" ' + list[i] + '"style="width: 150px"></td>\n' +
+                '        <td>' + soLuongNuoc[i] + ' </td>\n' +
+                '        <td>' + newDonGia[i] + '</td>\n' +
+                '        <td>' + thanhTien[i] + '</td>\n' +
+                '    </tr>'
+        }
+        conten += ' </table>'
+        document.getElementById("bangKetQua").innerHTML = conten;
+    }
+
+    function danhSach(i) {
+        newDonGia[i] = donGia[i];
+        soLuongNuoc[i] = '<input type="number" placeholder="số lượng"  oninput="hoaDon(this.value,' + i + ')">'
+        showMenuList(menuList);
+    }
+
+    function hoaDon(soLuong, i) {
+        thanhTien[i] = +soLuong * (+donGia[i]);
+        soLuongNuoc[i] = '<input type="number" placeholder="số lượng" oninput="hoaDon(this.value,' + i + ')" value="' + soLuong + '">'
+        showMenuList(menuList);
+    }
+
+    function pay() {
+        let sum = 0;
+        for (let i = 0; i < thanhTien.length; i++) {
+            console.log("davo")
+            sum += thanhTien[i];
+        }
+        document.getElementById("tongTienPhaiTra").innerText = sum;
+    }
+</script>
+</html>
