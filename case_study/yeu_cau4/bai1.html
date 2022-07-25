@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+<script>
+    let array = "tRuong  hAi";
+    array = array.split('');
+    let newarra = [];
+    for (let i = 0; i < array.length; i++) {
+        if (array[i] === array[i + 1] && array[i] === " ") {
+            array.splice(i, 1);
+            newarra = array;
+        }
+    }
+    for (let j = 0; j < newarra.length; j++) {
+        if (j === 0 || newarra[j - 1] === ' ') {
+            newarra[j] = newarra[j].toUpperCase();
+        }
+        if (j !== 0 && newarra[j - 1] !== ' ') {
+            newarra[j] = newarra[j].toLowerCase();
+        }
+    }
+    alert(newarra.join(''));
+</script>
+</html>

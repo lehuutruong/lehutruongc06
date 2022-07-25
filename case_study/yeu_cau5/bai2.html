@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+<script>
+    let array = [[2, 3, 4, 5], [6, 6, 7, 7]];
+
+    function soNguyenTo(giaTri) {
+        let newarray = [];
+        let arrayOne = [];
+        for (let i = 0; i < giaTri.length; i++) {
+            for (let j = 0; j < giaTri[i].length; j++) {
+                if (kiemTra(giaTri[i][j])) {
+                    newarray.push(giaTri[i][j]);
+                }
+
+            }
+        }
+        for (let k = 0; k < newarray.length; k++) {
+            if (!arrayOne.includes(newarray[k])) {
+                arrayOne.push(newarray[k]);
+            }
+        }
+        return arrayOne;
+    }
+
+    function kiemTra(index) {
+        if (index < 2) {
+            return false;
+        } else {
+            for (let i = 2; i < index; i++) {
+                if (index % i === 0) {
+                    return false;
+                }
+            }
+            return true;
+        }
+    }
+
+    alert("các số nguyên tố có trong mảng 2 chiều trên là: " + soNguyenTo(array))
+    alert("Đếm số nguyên tố có trong mảng là: " + soNguyenTo(array).length);
+</script>
+</html>

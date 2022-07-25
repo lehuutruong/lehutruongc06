@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+<script>
+    let array = [[2, 3, 4, 5], [6, 6, 7, 7]];
+
+    function giaTriLonNhat(giaTri) {
+        // let newarray = [];
+        let max = giaTri[0][0];
+        for (let i = 0; i < giaTri.length; i++) {
+            for (let j = 0; j < giaTri[i].length; j++) {
+                if (max < giaTri[i][j]) {
+                    max = giaTri[i][j];
+                }
+            }
+        }
+        return max;
+    }
+
+    alert("giá trị lớn nhất của mảng 2 chiều trên là: "+giaTriLonNhat(array));
+
+    function giaTriNhoNhat(giaTri) {
+        let min = giaTri[0][0];
+        for (let i = 0; i < giaTri.length; i++) {
+            for (let j = 0; j < giaTri[i].length; j++) {
+                if (min > giaTri[i][j]) {
+                    min = giaTri[i][j];
+                }
+            }
+        }
+        return min;
+    }
+
+    alert("giá trị nhỏ nhất của mảng trên là: "+giaTriNhoNhat(array));
+</script>
+
+</html>

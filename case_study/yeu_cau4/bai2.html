@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+<script>
+    let kiTu = prompt("mời bạn nhập vào xâu kí tự");
+    kiTu.toString().split("");
+    let newKyTu = [];
+    for (let i = 0; i < kiTu.length; i++) {
+        if (!newKyTu.includes(kiTu[i])) {
+            newKyTu.push(kiTu[i]);
+        }
+    }
+    alert("số lượng kí tự khác nhau là: " + newKyTu.length);
+</script>
+</html>

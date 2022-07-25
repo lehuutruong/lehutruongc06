@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+<script>
+    let array = 'aabcc';
+    let arrayTwo = 'adcaa';
+    array = array.split('');
+    arrayTwo = arrayTwo.split('');
+    let newArr = [];
+    for (let i = 0; i < array.length; i++) {
+        for (let j = 0; j < arrayTwo.length; j++) {
+            if (arrayTwo[j] === array[i]) {
+                newArr.push(arrayTwo[j]);
+                arrayTwo.splice(j, 1);
+                break;
+            }
+        }
+    }
+    alert("sô lượng kí tự chung là : " + newArr.length)
+</script>
+</html>
