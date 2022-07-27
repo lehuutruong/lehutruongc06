@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+<script>
+    function sumSoHoanHao(index) {
+        let total = 0;
+        for (let i = 0; i < index.length; i++) {
+            if (kiemSoHoanHao(index[i])) {
+                total += index[i];
+            }
+        }
+        return total;
+    }
+
+    function kiemSoHoanHao(number) {
+        let sum = 0;
+        for (let i = 1; i < number; i++) {
+            if (number % i === 0) {
+                sum += i;
+            }
+        }
+        if (sum === number) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+
+    let arr = [6, 28, 1, 2, 3, 4, 5];
+    alert(sumSoHoanHao(arr));
+</script>
+</html>

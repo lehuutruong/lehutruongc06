@@ -9,20 +9,20 @@
 </body>
 <script>
     let arr = "HellOCodegym";
-    arr.toString().split("");
+    arr.split("");
 
     function kyTu(index) {
-        let demOne = 0;
-        let demTwo = 0;
+        let demOne = [];
+        let demTwo = [];
         let newarr = [];
         for (let i = 0; i < index.length; i++) {
             if (index.charCodeAt(i) >= 65 && index.charCodeAt(i) <= 90) {
-                demOne++;
-            } else {
-                demTwo++;
+                demOne.push(index[i]);
+            } else if (index.charCodeAt(i) >= 97 && index.charCodeAt(i) <= 122) {
+                demTwo.push(index[i]);
             }
         }
-        newarr.push(demOne, demTwo);
+        newarr.push(demOne.length, demTwo.length);
         return newarr;
     }
 

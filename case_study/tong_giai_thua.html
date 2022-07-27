@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+<script>
+    function sumGiaiThua(number) {
+        let giaiThua = 1;
+        if (number === 0) {
+            giaiThua = 1;
+        }
+        for (let i = 1; i <= number; i++) {
+            giaiThua *= i;
+
+        }
+        return giaiThua;
+    }
+
+    let a = 5;
+    alert(sumGiaiThua(a))
+</script>
+</html>
