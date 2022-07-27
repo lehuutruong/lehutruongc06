@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<input type="text" id="nhapOne">
+<input type="text" id="nhapTwo">
+<input type="button" onclick="addHangXe()" value="thêm thêm ">
+
+<p id="ketQua"></p>
+<input type="button" onclick="sapXepXe()" value="Sắp xếp">
+</body>
+<script>
+    class XeMay {
+        constructor(hangXe, chuSoHuu) {
+            this.hangXe = hangXe;
+            this.chuSoHuu = chuSoHuu;
+        }
+
+        setHangXe(value) {
+            this.hangXe = value;
+        }
+
+        setChuSoHuu(value) {
+            this.chuSoHuu = value;
+        }
+
+        getHangXe() {
+            return this.hangXe;
+        }
+
+        getChuSoHuu() {
+            return this.chuSoHuu;
+        }
+    }
+
+    let ketQua = [];
+    let xeMay1 = new XeMay("honda", "truong");
+    let xeMay2 = new XeMay("bonda", "ccuong");
+    ketQua.push(xeMay1, xeMay2);
+
+    function xeXe(list) {
+        let conten = '<table border="1">\n' +
+            '    <tr>\n' +
+            '        <th>STT</th>\n' +
+            '        <th>Hãng Xe</th>\n' +
+            '        <th>Chủ Sở Hữu</th>\n' +
+            '        <th>Xóa</th>\n' +
+            '        <th>Sửa</th>\n' +
+            '    </tr>';
+
+        for (let i = 0; i < list.length; i++) {
+            conten += '<tr>\n' +
+                '        <td>' + (i + 1) + '</td>\n' +
+                '        <td>' + list[i].getHangXe() + '</td>\n' +
+                '        <td>' + list[i].getChuSoHuu() + '</td>\n' +
+                '        <td><input type="button" onclick="xoaHangXe(' + i + ')" value="Xóa"></td>\n' +
+                '        <td><input type="button" onclick="editHangXe(' + i + ')" value="Sửa"></td>\n' +
+                '    </tr>'
+        }
+        conten += '</table>';
+        document.getElementById("ketQua").innerHTML = conten;
+    }
+
+    xeXe(ketQua);
+
+    function addHangXe() {
+        let add = document.getElementById("nhapOne").value;
+        let hang = document.getElementById("nhapTwo").value;
+        if (add === "" || hang === "" ||add===" "||hang===" ") {
+            alert("nhập lại đi má")
+            return;
+        }
+        let xeMoi = new XeMay(add, hang);
+        ketQua.push(xeMoi);
+        xeXe(ketQua);
+    }
+
+    function xoaHangXe(index) {
+        if (confirm("bạn có chắc chắn muốn xóa không")) {
+            ketQua.splice(index, 1);
+        }
+        xeXe(ketQua);
+    }
+
+    function editHangXe(index) {
+        // let newPro = prompt("nhập lại hãng xe bạn muốn");
+        // let newPro1 = prompt("nhập lại tên bạn muốn");
+        // let xeMoi = new XeMay(newPro, newPro1);
+        // ketQua.splice(index, 1, xeMoi);
+        ketQua[index].setHangXe(prompt("nhập laij hãng xe bạn muốn"));
+        ketQua[index].setChuSoHuu(prompt("nhập laij hãng xe bạn muốn"));
+        xeXe(ketQua);
+    }
+
+    function sapXepXe() {
+        ketQua= ketQua.sort((a, b) => {
+            return a.getChuSoHuu() > b.getChuSoHuu() ? 1 : -1;
+        });
+        xeXe(ketQua);
+    }
+</script>
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+<script>
+    let arr = "HellOCodegym";
+    arr.toString().split("");
+
+    function kyTu(index) {
+        let demOne = 0;
+        let demTwo = 0;
+        let newarr = [];
+        for (let i = 0; i < index.length; i++) {
+            if (index.charCodeAt(i) >= 65 && index.charCodeAt(i) <= 90) {
+                demOne++;
+            } else {
+                demTwo++;
+            }
+        }
+        newarr.push(demOne, demTwo);
+        return newarr;
+    }
+
+    alert(kyTu(arr));
+
+</script>
+</html>

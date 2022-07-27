@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+<script>
+    let array = 'object Oriented propramming';
+    array.toString().split("");
+
+    function vietTat(index) {
+        let arrr = [];
+        for (let i = 0; i < index.length; i++) {
+            if (!index.includes(' ')|| index[0]===" ") {
+                alert("chuỗi này chỉ có một kí tu ");
+            }
+            if (i === 0 || index[i - 1] === ' ') {
+                arrr.push(index[i]);
+            }
+        }
+        for (let i = 0; i <arrr.length ; i++) {
+            arrr[i]=arrr[i].toUpperCase();
+        }
+        return arrr;
+    }
+    alert(vietTat(array).join("")) ;
+</script>
+</html>

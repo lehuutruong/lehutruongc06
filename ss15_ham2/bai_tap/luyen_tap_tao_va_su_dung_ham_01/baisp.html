@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h3>DANH SÁCH SẢN PHẨM</h3>
+<input type="text" id="nhapNhap">
+<input type="text" id="nhapNhap1">
+<input type="text" id="nhapNhap2">
+<input type="button" onclick="addProduct()" value="nhấp nhấp">
+<p id="ketQua"></p>
+</body>
+ <script>
+     let productList=['con cu','con dái'];
+     let productList1=['con cu','con dái'];
+     let productList2=['con cu','con dái'];
+     function showAllProduct(list,list1,list2) {
+         let content='<table border="1">\n' +
+             '    <tr>\n' +
+             '        <Td>Số thứ tự</Td>\n' +
+             '        <td>Tên sản phẩm</td>\n' +
+             '        <td>Tên sản phẩm</td>\n' +
+             '        <td>Tên sản phẩm</td>\n' +
+             '        <td>Sửa</td>\n' +
+             '        <td>Xóa</td>\n' +
+             '    </tr>';
+         for (let i = 0; i <list.length ; i++) {
+             content += ' <tr>\n' +
+                 '        <Td>'+(i+1)+'</Td>\n' +
+                 '        <td>'+list[i]+'</td>\n' +
+                 '        <td>'+list1[i]+'</td>\n' +
+                 '        <td>'+list2[i]+'</td>\n' +
+                 '        <td><input type="button" onclick="editProduct('+i+')" value="Sửa"></td>\n' +
+                 '        <td><input type="button" onclick="deleteProduct('+i+')" value="Xóa"></td>\n' +
+                 '    </tr>';
+         }
+         content += '</table>'
+         document.getElementById("ketQua").innerHTML=content;
+           }
+     showAllProduct(productList,productList1,productList2);
+ function addProduct() {
+     let newpro=document.getElementById("nhapNhap").value;
+     let newpro1=document.getElementById("nhapNhap1").value;
+     let newpro2=document.getElementById("nhapNhap2").value;
+       productList.push(newpro);
+       productList1.push(newpro1);
+       productList2.push(newpro2);
+       showAllProduct(productList,productList1,productList2);
+      }
+ function deleteProduct(index) {
+     productList.splice(index,1);
+     productList1.splice(index,1);
+     productList2.splice(index,1);
+     showAllProduct(productList,productList1,productList2);
+ }
+ function editProduct(index) {
+     let newprrod=prompt("mời bạn nhập vào sản phẩm thay thế");
+     let newprrod1=prompt("mời bạn nhập vào sản phẩm thay thế");
+     let newprrod2=prompt("mời bạn nhập vào sản phẩm thay thế");
+     productList[index]=newprrod;
+     productList1[index]=newprrod1;
+     productList2[index]=newprrod2;
+     showAllProduct(productList,productList1,productList2);
+
+ }
+ </script>
+</html>

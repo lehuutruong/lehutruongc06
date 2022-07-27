@@ -10,24 +10,27 @@
 <script>
     let inputRow = +prompt("Nhập giá trị hàng");
     let inputCol = +prompt("Nhập giá trị cột");
-    tongChan(inputRow, inputCol);
 
     function tongChan(inputRow, inputCol) {
         let arr = new Array(inputRow);
         let sum = 0;
+        let dem = 0;
+        let avg;
         for (let i = 0; i < arr.length; i++) {
             arr[i] = new Array(inputCol);
             for (let j = 0; j < arr[i].length; j++) {
                 arr[i][j] = +prompt("nhập giá trị");
-                if (arr[i][j] % 2 === 0) {
+                if (j % 2 === 0) {
                     sum += arr[i][j];
+                    dem++;
                 }
             }
+            avg = sum / dem;
+
         }
         alert(arr);
-        alert(sum);
+        alert(avg)
     }
-
-
+    tongChan(inputRow, inputCol);
 </script>
 </html>

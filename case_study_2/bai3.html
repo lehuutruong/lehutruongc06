@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+<script>
+    let array = [1, 5, 6, 13, 12, 8, 0, 5, 1];
+    let soDauTien = 0;
+    let soThuHai = 1;
+    let soTiepTheo = 1;
+    let newarr = [];
+    for (let i = 0; i < 20; i++) {
+        newarr.push(soDauTien);
+        soTiepTheo = soDauTien + soThuHai;
+        soDauTien = soThuHai;
+        soThuHai = soTiepTheo;
+    }
+
+    function fibonaci(index) {
+        let newarray = [];
+        for (let i = 0; i < index.length; i++) {
+            if (newarr.includes(index[i])) {
+                newarray.push(index[i]);
+            }
+        }
+        newarray.sort(function (a, b) {
+            return a - b;
+        })
+        return newarray;
+    }
+
+    alert(fibonaci(array));
+</script>
+</html>

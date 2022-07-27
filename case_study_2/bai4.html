@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<input type="text" id="nhapOne"> Nhập mã máy<br>
+<input type="text" id="nhapTwo"> Nhập tên máy<br>
+<input type="text" id="nhapThree"> Nhập tên hãng máy<br>
+<input type="text" id="nhapFour"> Nhập giá bán <br>
+<input type="button" onclick="addComputer()" value="thêm thêm ">
+<p id="ketQua"></p>
+<input type="button" onclick="sortComputer()" value="Sắp xếp">
+</body>
+<script>
+    class MayTinh {
+        constructor(maMay, tenMay, tenHangMay, giaBan) {
+            this.maMay = maMay;
+            this.tenMay = tenMay;
+            this.tenHangMay = tenHangMay;
+            this.giaBan = giaBan;
+        }
+
+        setMaMay(value) {
+            this.maMay = value;
+        }
+
+        setTenMay(value) {
+            this.tenMay = value;
+        }
+
+        setTenHangMay(value) {
+            this.tenHangMay = value;
+        }
+
+        setGiaBan(value) {
+            this.giaBan = value;
+        }
+
+        getMaMay() {
+            return this.maMay;
+        }
+
+        getTenMay() {
+            return this.tenMay;
+        }
+
+        getTenHangMay() {
+            return this.tenHangMay;
+        }
+
+        getGiaBan() {
+            return this.giaBan;
+        }
+    }
+
+    let listComputer = [];
+    let mayTinh = new MayTinh("honda", "truong", "hangxmays", "giasbans");
+    let mayTinhOne = new MayTinh("honda", "truong", "hangxmays", "giasbans");
+    listComputer.push(mayTinh, mayTinhOne);
+
+    function computer(list) {
+        let conten = '<table border="1">\n' +
+            '    <tr>\n' +
+            '        <th>STT</th>\n' +
+            '        <th>MÃ MÁy</th>\n' +
+            '        <th>TÊN MÁY</th>\n' +
+            '        <th>TÊN HÃNG MÁY</th>\n' +
+            '        <th>GIÁ BÁN</th>\n' +
+            '    </tr>';
+        for (let i = 0; i < list.length; i++) {
+            conten += '<tr>\n' +
+                '        <td>' + (i + 1) + '</td>\n' +
+                '        <td>' + list[i].getMaMay() + '</td>\n' +
+                '        <td>' + list[i].getTenMay() + '</td>\n' +
+                '        <td>' + list[i].getTenHangMay() + '</td>\n' +
+                '        <td>' + list[i].getGiaBan() + '</td>\n' +
+                '    </tr>';
+        }
+        conten += '</table>';
+        document.getElementById("ketQua").innerHTML = conten;
+    }
+
+    computer(listComputer);
+
+    function addComputer() {
+        let add = document.getElementById("nhapOne").value;
+        let hang = document.getElementById("nhapTwo").value;
+        let add1 = document.getElementById("nhapThree").value;
+        let hang1 = document.getElementById("nhapFour").value;
+        if (add === "" || hang === "" || add === " " || hang === " " || add1 === "" || hang1 === "") {
+            alert("nhập lại đi má")
+            return;
+        }
+        let mayMoi = new MayTinh(add, hang, add1, hang1);
+        listComputer.push(mayMoi);
+        computer(listComputer);
+    }
+
+    // function xoaHangXe(index) {
+    //     if (confirm("bạn có chắc chắn muốn xóa không")) {
+    //         ketQua.splice(index, 1);
+    //     }
+    //     computer(ketQua);
+    // }
+    //
+    // function editHangXe(index) {
+    //     // let newPro = prompt("nhập lại hãng xe bạn muốn");
+    //     // let newPro1 = prompt("nhập lại tên bạn muốn");
+    //     // let xeMoi = new XeMay(newPro, newPro1);
+    //     // ketQua.splice(index, 1, xeMoi);
+    //     ketQua[index].setHangXe(prompt("nhập laij hãng xe bạn muốn"));
+    //     ketQua[index].setChuSoHuu(prompt("nhập laij hãng xe bạn muốn"));
+    //     computer(ketQua);
+    // }
+
+    function sortComputer() {
+        listComputer = listComputer.sort(function (a, b) {
+            return a.getGiaBan() - b.getGiaBan()
+        });
+        computer(listComputer);
+    }
+</script>
+</html>

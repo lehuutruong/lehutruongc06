@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+<script>
+    let chuoi = 'AbcDefG'
+    chuoi.toString().split("");
+    let newarr = [];
+
+    function giaTri(giaTri) {
+        for (let i = 0; i < giaTri.length; i++) {
+            if (giaTri.charCodeAt(i) >= 65 && giaTri.charCodeAt(i) <= 90) {
+                newarr.push(giaTri[i]);
+            }
+        }
+    }
+
+    giaTri(chuoi);
+    alert(newarr);
+</script>
+</html>
