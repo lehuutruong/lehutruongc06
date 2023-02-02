@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+<script>
+    let number;
+    do {
+        number = +prompt("nhập vào số phần tử của mảng");
+        if (number > 50 || number < 0) {
+            alert("mời bạn nhâ vào số hợp lệ ")
+        }
+    } while (number > 50);
+    let array = new Array(number);
+    for (let i = 0; i < array.length; i++) {
+        array[i] = +prompt("nhập vào các phần tử");
+    }
+    for (let j = 1; j < array.length; j++) {
+        if ((array[j] < array[j - 1] && (array[j] < array[j + 1]) || (array[j] > array[j - 1] && array[j] > array[j + 1])) && array[j] !== array[j + 1]) {
+            alert("true");
+            break;
+        } else {
+            alert("false");
+            break;
+        }
+
+    }
+    alert("mảng nhập vào là: " + array);
+</script>
+</html>

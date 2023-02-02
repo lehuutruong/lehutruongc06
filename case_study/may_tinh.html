@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<input type="text" id="inputComputerOne"> Nhập vào mã máy tính <br>
+<input type="text" id="inputComputerTwo"> Nhập vào tên máy tính <br>
+<input type="text" id="inputComputerThree"> Nhập vào tên hãng máy tính <br>
+<input type="text" id="inputComputerFour"> Nhập vào giá bán <br>
+<input type="button" onclick="addComputer()" value="ADDCOMPUTER"> <br>
+<p id="bangKetQua"></p>
+<input type="button" onclick="sortComputer()" value="SẮP XẾP">
+</body>
+<script>
+    class Computer {
+        constructor(maMay, tenMay, tenHangMay, giaBan) {
+            this.maMay = maMay;
+            this.tenMay = tenMay;
+            this.tenHangMay = tenHangMay;
+            this.giaBan = giaBan;
+        }
+
+        setMaMay(value) {
+            this.maMay = value;
+        }
+
+        setTenMay(value) {
+            this.tenMay = value;
+        }
+
+        setTenHangMay(value) {
+            this.tenHangMay = value;
+        }
+
+        setGiaBan(value) {
+            this.giaBan = value;
+        }
+
+        getMaMay() {
+            return this.maMay;
+        }
+
+        getTenMay() {
+            return this.tenMay;
+        }
+
+        getTenHangMay() {
+            return this.tenHangMay;
+        }
+
+        getGiaBan() {
+            return this.giaBan;
+        }
+
+        toString() {
+            return ("máy tính" + this.maMay + "tính máy" + this.tenMay + "may may" + this.tenHangMay + "tinh tinh" + this.giaBan);
+        }
+    }
+
+    let listComputer = [];
+    let objectComputer = new Computer("honda", "truong", "hangxmays", "giasbans");
+    let objectComputerOne = new Computer("honda", "truong", "hangxmays", "giasbans");
+    listComputer.push(objectComputer, objectComputerOne);
+    listComputerProduct(listComputer);
+
+    function listComputerProduct(list) {
+        let conten = '<table border="1">\n' +
+            '    <tr>\n' +
+            '        <th>STT</th>\n' +
+            '        <th>MÃ MÁy</th>\n' +
+            '        <th>TÊN MÁY</th>\n' +
+            '        <th>TÊN HÃNG MÁY</th>\n' +
+            '        <th>GIÁ BÁN</th>\n' +
+            '        <th>XÓA</th>\n' +
+            '        <th>SỬA</th>\n' +
+            '    </tr>';
+        for (let i = 0; i < list.length; i++) {
+            conten += '<tr>\n' +
+                '        <td>' + (i + 1) + '</td>\n' +
+                '        <td>' + list[i].getMaMay() + '</td>\n' +
+                '        <td>' + list[i].getTenMay() + '</td>\n' +
+                '        <td>' + list[i].getTenHangMay() + '</td>\n' +
+                '        <td>' + list[i].getGiaBan() + '</td>\n' +
+                '        <td><input type="button" onclick="deleteComputer(' + i + ')" value="XÓA"></td>\n' +
+                '        <td><input type="button" onclick="editComputer(' + i + ')" value="SỬA"></td>\n' +
+                '    </tr>';
+        }
+        conten += '</table>';
+        document.getElementById("bangKetQua").innerHTML = conten;
+    }
+
+    function addComputer() {
+        let add = document.getElementById("inputComputerOne").value;
+        let hang = document.getElementById("inputComputerTwo").value;
+        let add1 = document.getElementById("inputComputerThree").value;
+        let hang1 = document.getElementById("inputComputerFour").value;
+        if (add === "" || hang === "" || add === " " || hang === " " || add1 === "" || hang1 === "") {
+            alert("không được để trông ô nhập vào ");
+            return;
+        }
+        let newComputer = new Computer(add, hang, add1, hang1);
+        listComputer.push(newComputer);
+        listComputerProduct(listComputer);
+    }
+
+    function deleteComputer(index) {
+        if (confirm("bạn có chắc chắn muốn xóa không")) {
+            listComputer.splice(index, 1);
+        }
+
+        listComputerProduct(listComputer);
+    }
+
+    function editComputer(index) {
+        let newproductOne = prompt("nhập vào mã máy mới");
+        let newproductTwo = prompt("nhập vào tên máy mới");
+        let newproductThree = prompt("nhập vào tên hãng máy mới");
+        let newproductFour = +prompt("nhập vào giá bán mới");
+        let newProductList = new Computer(newproductOne, newproductTwo, newproductThree, newproductFour)
+        listComputer.splice(index, 1, newProductList);
+        listComputerProduct(listComputer);
+    }
+    function sortComputer() {
+        listComputer = listComputer.sort(function (a, b) {
+            return a.getGiaBan() - b.getGiaBan();
+        });
+        listComputerProduct(listComputer);
+    }
+</script>
+</html>

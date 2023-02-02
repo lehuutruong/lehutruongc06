@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let arr1 = [
+        'Polaris',
+        'Aldebaran',
+        'Deneb',
+        'Vega',
+        'Altair',
+        ' Dubhe',
+        ' Regulus'
+    ];
+    let arr2 = [
+        'Ursa',
+        'Minor',
+        'Tarurus',
+        'Cygnus',
+        'Lyra',
+        'Aquila',
+        'Ursa Major',
+        'Leo'
+    ];
+    let arr = prompt("nhập sao");
+    function kiemTra(value) {
+        for (let i = 0; i < arr1.length; i++) {
+            for (let j = 0; j <arr2.length ;j++) {
+                if (arr == arr1[i]){
+                    alert(arr2[j])
+                }
+            }
+        }
+
+    }
+    document.write(kiemTra(arr1));
+</script>
+</body>
+</html>

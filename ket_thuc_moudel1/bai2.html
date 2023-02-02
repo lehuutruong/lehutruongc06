@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+<script>
+    let chuoiNgay = prompt("mời bạn nhập vào ngày tháng");
+    chuoiNgay.split("");
+
+    function kiemTraChuoi(chuoi) {
+        for (let i = 0; i < chuoi.length; i++) {
+            if (chuoi[0] >= 0 && chuoi[0] <= 3 && chuoi[1] >= 0 && chuoi[1] <= 9 && chuoi[2] === "/" && chuoi[3] <= 1 && chuoi[3] >= 0 && chuoi[4] <= 9 && chuoi[4] >= 0 && chuoi[5] === "/") {
+                return true;
+
+            } else {
+                return false;
+
+            }
+        }
+    }
+
+    kiemTraChuoi(chuoiNgay);
+    let mangMoi = [];
+    for (let i = 0; i < chuoiNgay.length; i++) {
+        mangMoi.push(chuoiNgay[6], chuoiNgay[7], chuoiNgay[8], chuoiNgay[9]);
+        parseFloat(mangMoi.join(" "));
+    }
+
+    function kiemTraNamNhuan(index) {
+        if (index % 4 === 0 && index % 100 !== 0 || index % 400 === 0) {
+            return ("là năm nhuận");
+        } else {
+            return ("không là năm nhuận");
+        }
+    }
+
+    alert(kiemTraNamNhuan(mangMoi));
+</script>
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+<script>
+    let chuoi = "abcbdcef";
+    let newarr = chuoi.split("");
+    let arr = [];
+    let arr1 = [];
+
+    function tien() {
+        for (let i = 0; i < newarr.length; i++) {
+            if (!arr.includes(newarr[i])) {
+                arr.push(newarr[i])
+            }
+            else arr1.push(newarr[i])
+        }
+        return arr1;
+    }
+    alert(tien())
+</script>
+</html>

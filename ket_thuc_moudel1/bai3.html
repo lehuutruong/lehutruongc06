@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<input type="button" onclick="addBike()" value="ADDMOTOBIKE"> <br>
+<p id="bangKetQua"></p>
+<input type="button" onclick="sortBike()" value="SẮP XẾP">
+</body>
+<script>
+    class MotoBike {
+        constructor(bienSoXe, tenHocSinh, chungMinhNhanDan, hangXe, phiDong) {
+            this.bienSoXe = bienSoXe;
+            this.tenHocSinh = tenHocSinh;
+            this.chungMinhNhanDan = chungMinhNhanDan;
+            this.hangXe = hangXe;
+            this.phiDong = phiDong;
+        }
+
+        setBienSoXe(value) {
+            this.bienSoXe = value;
+        }
+
+        setTenHocSinh(value) {
+            this.tenHocSinh = value;
+        }
+
+        setChungMinhNhanDan(value) {
+            this.chungMinhNhanDan = value;
+        }
+
+        setHangXeMay(value) {
+            this.hangXe = value;
+        }
+
+        setPhiDong(value) {
+            this.phiDong = value;
+        }
+
+        getBienSoXe() {
+            return this.bienSoXe;
+        }
+
+        getTenHocSinh() {
+            return this.tenHocSinh;
+        }
+
+        getChungMinhNhanDan() {
+            return this.chungMinhNhanDan;
+        }
+
+        getHangXeMay() {
+            return this.hangXe;
+        }
+
+        getPhiDong() {
+            return this.phiDong;
+        }
+    }
+
+    let listMotoBike = [];
+    let objectMotoBike = new MotoBike("38p1", "truong", "1234", "honda", "15");
+    let objectMotoBikeOne = new MotoBike("38p1", "truong", "123422", "honda", "16");
+    listMotoBike.push(objectMotoBike, objectMotoBikeOne);
+    listMotoBikeProduct(listMotoBike);
+
+    function listMotoBikeProduct(list) {
+        let bang = '<table border="1">\n' +
+            '    <tr>\n' +
+            '        <th>STT</th>\n' +
+            '        <th>Biển Số xe</th>\n' +
+            '        <th>Họ và tên</th>\n' +
+            '        <th>Chứng minh nhân dân</th>\n' +
+            '        <th>Hãng xe</th>\n' +
+            '        <th>Phí đóng gửi</th>\n' +
+            '        <th>XÓA</th>\n' +
+            '    </tr>';
+        for (let i = 0; i < list.length; i++) {
+            bang += '<tr>\n' +
+                '        <td>' + (i + 1) + '</td>\n' +
+                '        <td>' + list[i].getBienSoXe() + '</td>\n' +
+                '        <td>' + list[i].getTenHocSinh() + '</td>\n' +
+                '        <td>' + list[i].getChungMinhNhanDan() + '</td>\n' +
+                '        <td>' + list[i].getHangXeMay() + '</td>\n' +
+                '        <td>' + list[i].getPhiDong() + '</td>\n' +
+                '        <td><input type="button" onclick="deleteMotoBike(' + i + ')" value="XÓA"></td>\n' +
+                '    </tr>';
+        }
+        bang += '</table>';
+        document.getElementById("bangKetQua").innerHTML = bang;
+    }
+
+    function addBike() {
+        let addOne = prompt("nhập vào biển số xe");
+        let addTwo = prompt("nhập vào họ tên sinh viên");
+        let addThree = +prompt("nhập vào chứng minh nhân dân");
+        let addFour = prompt("nhập vào hãng xe máy");
+        let addFive = +prompt("nhập vào phí đóng gửi");
+        if (addOne === "" || addOne === " " || addTwo === "" || addTwo === " " || addThree === "" || addThree === " " || addFour === "" || addFour === " " || addFive === "" || addFive === " ") {
+            alert("không được để trống ô nhập vào ");
+            return;
+        }
+        let newBikeOne = new MotoBike(addOne, addTwo, addThree, addFour, addFive);
+        listMotoBike.push(newBikeOne);
+        listMotoBikeProduct(listMotoBike);
+    }
+
+    function deleteMotoBike(index) {
+        if (confirm("bạn có chắc chắn muốn xóa không")) {
+            listMotoBike.splice(index, 1);
+        }
+
+        listMotoBikeProduct(listMotoBike);
+    }
+
+    function sortBike() {
+        listMotoBike = listMotoBike.sort(function (a, b) {
+            return a.getPhiDong() - b.getPhiDong();
+        });
+        listMotoBikeProduct(listMotoBike);
+    }
+</script>
+</html>

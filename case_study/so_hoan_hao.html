@@ -8,17 +8,17 @@
 
 </body>
 <script>
-    function sumSoHoanHao(index) {
+    function tongSoHoanHao(index) {
         let total = 0;
         for (let i = 0; i < index.length; i++) {
-            if (kiemSoHoanHao(index[i])) {
+            if (kiemTraSoHoanHao(index[i])) {
                 total += index[i];
             }
         }
         return total;
     }
 
-    function kiemSoHoanHao(number) {
+    function kiemTraSoHoanHao(number) {
         let sum = 0;
         for (let i = 1; i < number; i++) {
             if (number % i === 0) {
@@ -33,6 +33,6 @@
     }
 
     let arr = [6, 28, 1, 2, 3, 4, 5];
-    alert(sumSoHoanHao(arr));
+    alert("tổng số các số hoàn hảo  trong mảng là: "+tongSoHoanHao(arr));
 </script>
 </html>

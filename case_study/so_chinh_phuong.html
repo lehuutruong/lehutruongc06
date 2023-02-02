@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+<script>
+    function tongChinhPhuong(index) {
+        let total = 0;
+        for (let i = 0; i < index.length; i++) {
+            if (kiemTraSoChinhPhuong(index[i])) {
+                total += index[i];
+            }
+        }
+        return total;
+    }
+
+    function kiemTraSoChinhPhuong(number) {
+        let sqrt = Math.sqrt(number);
+        if (sqrt * sqrt === number) {
+            return true;
+        }
+        return false;
+    }
+
+    let arr = [1, 25, 1, 2, 3, 9, 5];
+    alert(tongChinhPhuong(arr));
+</script>
+</html>
